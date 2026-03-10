@@ -1,14 +1,25 @@
+# create variable 
+distance_mi = 10 
+is_raining = False
+has_bike = True 
+has_car = False
+has_ride_share_app = False
 
-def apply_discount(price, discount):
-    if not isinstance(price, int) and not isinstance(price, float): 
-        return 'The price should be a number' 
-    if not isinstance(discount, int) and not isinstance(discount, float): 
-        return 'The discount should be a number'
-    if price <= 0: 
-        return 'The price should be greater than 0'
-    if discount < 0 or discount > 100 : 
-        return 'The discount should be between 0 and 100'
-    if price > 0 and (discount > 0 or discount < 100): 
-        return price - (price * discount / 100)
-
-print(apply_discount(100, 20))
+# check conditional based on distance_mi
+if bool(distance_mi) == False: 
+    print(False)
+elif distance_mi <= 1: 
+    if is_raining: 
+        print(False)
+    else: 
+        print(True)
+elif distance_mi > 1 and distance_mi <= 6: 
+    if has_bike and not is_raining: 
+        print(True)
+    else: 
+        print(False)
+elif distance_mi > 6: 
+    if has_car or has_ride_share_app:
+        print(True)
+    else: 
+        print(False)
